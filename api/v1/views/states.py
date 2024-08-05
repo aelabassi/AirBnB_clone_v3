@@ -1,9 +1,11 @@
 #!/usr/bin/python3
 """State view """
 from api.v1.views import app_views
-from flask import abort, jsonify, request
-from models import storage
+from flask import abort
+from flask import jsonify
+from flask import request
 from models.state import State
+from models import storage
 
 
 @app_views.route('/states', methods=['GET'], strict_slashes=False)
