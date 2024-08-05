@@ -5,6 +5,7 @@ from flask import abort
 from flask import jsonify
 from flask import request
 from models.city import City
+from models.state import State
 from models import storage
 
 
