@@ -122,7 +122,8 @@ class TestFileStorage(unittest.TestCase):
         """test get method"""
         newState = State(name="California")
         newState.save()
-        newUser = User(email="ichigo.kurasaki@shi.qui.ss", password="GetSugaTencho")
+        newUser = User(email="ichigo.kurasaki@shi.qui.ss",
+                       password="GetSugaTencho")
         newUser.save()
         self.assertIs(newState, models.storage.get("State", newState.id))
         self.assertIs(None, models.storage.get("State", "Seireitei"))
@@ -138,7 +139,8 @@ class TestFileStorage(unittest.TestCase):
         self.assertEqual(models.storage.count(), 0)
         newState = State(name="California")
         newState.save()
-        newUser = User(email="Zaraki.Kenpachi@.strength.ss", password="TheKenpachi")
+        newUser = User(email="Zaraki.Kenpachi@.strength.ss",
+                       password="TheKenpachi")
         newUser.save()
         self.assertEqual(models.storage.count("State"), count_ + 1)
         self.assertEqual(models.storage.count("User"), count_ + 2)
